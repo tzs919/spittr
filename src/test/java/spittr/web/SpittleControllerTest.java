@@ -1,4 +1,4 @@
-package spitter.web;
+package spittr.web;
 import static org.hamcrest.Matchers.*;
 import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.*;
