@@ -21,8 +21,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
+                //下面注释打开即表示使用https
 //                .requiresChannel()
-//                .antMatchers("/").requiresSecure()
+//                .antMatchers("/**").requiresSecure()
 //                .and()
                 .formLogin()
                 .loginPage("/login")
@@ -41,11 +42,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/").hasAnyRole("USER")
                 .antMatchers("/spitter/me").authenticated()
-                .antMatchers(HttpMethod.POST, "/spittles").authenticated()
+                .antMatchers("/spittles").authenticated()
                 .anyRequest().permitAll()
-                .and()
-                .requiresChannel()
-                .antMatchers("/spitter/register").requiresSecure()
+//                .and()
+//                .requiresChannel()
+//                .antMatchers("/spitter/register").requiresSecure()
 //    .and().csrf().disable()
         ;
 
