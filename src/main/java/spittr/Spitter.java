@@ -28,7 +28,7 @@ public class Spitter {
   private String lastName;
   
   @NotNull
-  @Email
+  @Email(message="{email.info}")
   private String email;
 
   public Spitter() {}
